@@ -27,7 +27,7 @@ class EventLoop : public muduo::noncopyable {
   void wakeup();
   void updateChannel(Channel* channel);
   void removeChannel(Channel* channel);
-  void hasChannel(Channel* channel);
+  bool hasChannel(Channel* channel);
 
   // 判断当前的eventLooop对象是否在自己的线程里面
   bool isInLoopThread() const { return threadId_ == CurrentThread::tid(); }
