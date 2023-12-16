@@ -1,6 +1,21 @@
-#ifndef EXAMPLES_ECHO_ECHO_H_
-#define EXAMPLES_ECHO_ECHO_H_
+#ifndef MUDUO_EXAMPLES_SIMPLE_ECHO_ECHO_H
+#define MUDUO_EXAMPLES_SIMPLE_ECHO_ECHO_H
 
-#include 
+#include <lzj_muduo/TcpServer.h>
 
-#endif  // !EXAMPLES_ECHO_ECHO_H_
+// RFC 862
+class EchoServer {
+ public:
+  EchoServer(EventLoop* loop, const InetAddress& listenAddr);
+
+  void start();  // calls server_.start();
+
+ private:
+  void onConnection(const TcpConnectionPtr& conn);
+
+  void onMessage(const TcpConnectionPtr& conn, Buffer* buf, TimeStamp time);
+
+  TcpServer server_;
+};
+
+#endif  // MUDUO_EXAMPLES_SIMPLE_ECHO_ECHO_H
