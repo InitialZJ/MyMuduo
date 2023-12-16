@@ -16,7 +16,7 @@ class Logger {
  private:
   Logger() = default;
   int level_;
-}
+};
 
 #define LOG_INFO(LogmsgFormat, ...)                   \
   do {                                                \

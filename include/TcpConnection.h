@@ -35,7 +35,7 @@ class TcpConnection : public muduo::noncopyable,
   void setWriteCompleteCallback(const WriteCompleteCallback& cb) {
     writeCompleteCallback_ = cb;
   }
-  void setCloseCallbackconst(CloseCallback& cb) { closeCallback_ = cb; }
+  void setCloseCallback(const CloseCallback& cb) { closeCallback_ = cb; }
   void setHighWaterMarkCallback(const HighWaterMarkCallback& cb,
                                 size_t highWaterMark) {
     highWaterMarkCallback_ = cb;
