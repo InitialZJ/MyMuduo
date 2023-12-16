@@ -16,7 +16,7 @@ class Poller;
 
 class EventLoop : public muduo::noncopyable {
  public:
-  using Functor = std::function<void>();
+  using Functor = std::function<void()>;
   EventLoop();
   ~EventLoop();
   void loop();  // 开启事件循环
