@@ -41,7 +41,6 @@ EventLoop::EventLoop()
   } else {
     t_loopInThisThread = this;
   }
-  // FIXME: 这里感觉有问题，readcallback需要传入TimeStamp
   wakeupChannel_->setReadCallback(std::bind(&EventLoop::handleRead, this));
   wakeupChannel_->enableReading();
 }

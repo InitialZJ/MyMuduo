@@ -98,7 +98,6 @@ void EpollPoller::update(int operation, Channel* channel) {
 }
 
 TimeStamp EpollPoller::poll(int timeoutMs, ChannelList* activeChannels) {
-  // FIXME: 原作者这里是channels.size()
   LOG_DEBUG("func=%s => fd total count: %lu\n", __FUNCTION__, channels_.size());
   int numEvents = epoll_wait(epollfd_, &*events_.begin(),
                              static_cast<int>(events_.size()), timeoutMs);
