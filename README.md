@@ -7,7 +7,7 @@
 克隆本仓库
 
 ```bash
-git clone https://github.com/yyg192/Cpp11-Muduo-MultiReactor.git
+git clone git@github.com:InitialZJ/MyMuduo.git
 ```
 
 进入lib目录，并切换到root模式进行编译安装
